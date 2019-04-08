@@ -476,7 +476,7 @@ protoc_SOURCES = google/protobuf/compiler/main.cc
 # to build the js_embed binary using $(CXX_FOR_BUILD) so that it is executable
 # on the build machine in a cross-compilation setup.
 js_embed$(EXEEXT): $(srcdir)/google/protobuf/compiler/js/embed.cc
-	$(CXX_FOR_BUILD) -o $@ $<
+	$(CXX_FOR_BUILD) $(CXXFLAGS) -o $@ $<
 js_well_known_types_sources =                                  \
 	google/protobuf/compiler/js/well_known_types/any.js          \
 	google/protobuf/compiler/js/well_known_types/struct.js       \
